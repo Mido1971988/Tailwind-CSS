@@ -10,4 +10,29 @@
 
     - note : you can add Tailwind CSS IntelliSense extension to autocomplete the name of classes on html file
     - note : you can use Tailwind Website to sreach for classes names ( https://tailwindcss.com/ )
+    - note : steps to use Tailwind with NextJs :
+        [1] will be automatically installed with new version of nextjs 
+        [2] be sure that those three lines ( @tailwind base; @tailwind components; @tailwind utilities; ) inside global.css
+        [3] be sure that content: [
+            './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
+            './pages/**/*.{js,ts,jsx,tsx,mdx}',
+            './components/**/*.{js,ts,jsx,tsx,mdx}',
+ 
+            // Or if using `src` directory:
+            './src/**/*.{js,ts,jsx,tsx,mdx}',
+            ]
+            inside tailwind.config.js file 
+        [4] import global.css inside app/layout.tsx
+ 
+* project in Lesson02 : 
+
+    * to install package.json file (npm init -y)    
+        then you can scripts to package.json so instead of writing ( npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch )
+        you can write only npm run tailwind
+
+    * to install prettier plugin (npm i -D prettier-plugin-tailwindcss )
+
+    * some website will help you :
+        - to get emoji : https://emojipedia.org
+        - to get unicode symbols : https://symbl.cc/en/
     
