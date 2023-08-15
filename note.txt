@@ -1,0 +1,13 @@
+* Tailwind CSS :  is an open source CSS framework
+
+* Steps to use Tailwind CSS : 
+    [1] install Tailwind ( npx tailwindcss init ) to install tailwind.config.js file
+    [2] create two folders ( build and src ) inside build folder add index.html and inside src folder add input.css
+    [3] add './build/*.html' inside content inside tailwind.config.js file to use tailwind on any html file inside build folder
+    [4] inside input.css add those three lines ( @tailwind base; @tailwind components; @tailwind utilities; ) and add any custom class you want to add
+    [5] compile by ( npx tailwindcss -i ./src/input.css -o ./build/css/style.css ) this will create css folder and create style.css file
+    [6] to watch changes on live server ( npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch )
+
+    - note : you can add Tailwind CSS IntelliSense extension to autocomplete the name of classes on html file
+    - note : you can use Tailwind Website to sreach for classes names ( https://tailwindcss.com/ )
+    
