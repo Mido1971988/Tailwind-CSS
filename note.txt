@@ -36,3 +36,52 @@
         - to get emoji : https://emojipedia.org
         - to get unicode symbols : https://symbl.cc/en/
     
+* Custom classes in Tailwind : 
+    [1] add custom class name :
+        write your class inside input.css file ( like .radial-blue class in Lesson01)
+    
+    [2] change or mutate classes already in Tailwind :
+        write it inside module.exports={ theme : {}} in tailwind.config.js
+        like module.exports={ theme : { screens:{ sm : 480 px }}} => here we can change sm to any value we want 
+        or like module.exports={ theme : { colors:{ blue : "1fb6ff" }}} => here we can change color of blue
+
+    [3] if you want to add specific px or color not availabe in Tailwind use [] :
+        - for exp. top-0 means top : 0 px , top-1 means top : 0.25 rem 
+            so if you want to add top : 13 px , you can write top-[13px]
+        - another exp. you want to use specific color like #bada55 you have two options : 
+            [a] mutate any color in module.exports={ theme : { colors:{ blue : "#bada55" }}}
+            [b] or use [] like bg-[#bada55]
+
+* directives in Tailwind : 
+    [1] @apply : 
+        use @apply to write tailwind css code inside class at input.css file and you can reuse
+        this class name to different html elements instead of writing long tailwind css code 
+        for each html element ( like header-directive in header in Lesson03)
+    
+    [2] @layer :
+        [a] solve the problem of order of overriding  
+            the order of layer is : [1]base [2]components [3]utilities
+            @layer allows you to write the CSS anywhere you like in input.css and this code will be be ordered like layers order
+                for exp. you write :
+                <button class="btn-blue bg-green-500">...</button> in html file
+                .btn-blue {@apply bg-blue-500 text-white;} in input.css file
+                the button color will not be green ( you wrote green after blue in html and should override it)
+                the problem here is when you build your project , in the created css file ( build/css/style.css) 
+                .btn-blue {@apply bg-blue-500 text-white;}  will be written after bg-green 
+                because you wrote .btn-blue {@apply bg-blue-500 text-white;} after @tailwind utilities in input.css
+                to solve this problem use @layer components{ .btn-blue {@apply bg-blue-500 text-white;} } 
+                now you are sure this code is before @tailwind utilities and will be written in ( build/css/style.css)
+                before bg-green
+            * note : if you didn't understand visit ( https://bloggie.io/@kinopyo/organize-your-css-in-the-tailwind-style-with-layer-directive )
+        
+        [b] CSS defined inside layers ,they'll be removed in the generated CSS (build/css/style.css) if not used.
+
+        [c] Wrapping any custom CSS with @layer also makes it possible to use modifiers with those rules, like hover: and focus: 
+            or responsive modifiers like md: and lg: ( like widescreen:section-min-height we used section-min-height with media query widescreen)
+            * note : to understand how to customize media query visit ( https://tailwindcss.com/docs/screens )
+
+
+
+
+
+
