@@ -45,7 +45,7 @@
         like module.exports={ theme : { screens:{ sm : 480 px }}} => here we can change sm to any value we want 
         or like module.exports={ theme : { colors:{ blue : "1fb6ff" }}} => here we can change color of blue
 
-    [3] if you want to add specific px or color not availabe in Tailwind use [] :
+    [3] arbitrary values :  if you want to add specific px or color not availabe in Tailwind use [] :
         - for exp. top-0 means top : 0 px , top-1 means top : 0.25 rem 
             so if you want to add top : 13 px , you can write top-[13px]
         - another exp. you want to use specific color like #bada55 you have two options : 
@@ -80,8 +80,10 @@
             or responsive modifiers like md: and lg: ( like widescreen:section-min-height we used section-min-height with media query widescreen)
             * note : to understand how to customize media query visit ( https://tailwindcss.com/docs/screens )
 
+* if you want to add class to element from JS you should use @apply so you can use class name at JS file
+    because you can't write tailwind classes inside hamburgerBtn.classList.toggle() ( like toggle-btn in main.js in Lesson04)
 
-
-
-
-
+* Animation in tailwind : 
+    [1] custom animation 
+        add keyframes and animation inside theme.extends in tailwind.config.js then add animate-nameOfAnimation class to element ( like in Lesson04)
+    [2] default tailwind animation ( like animate-spin)
