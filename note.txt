@@ -51,6 +51,11 @@
         - another exp. you want to use specific color like #bada55 you have two options : 
             [a] mutate any color in module.exports={ theme : { colors:{ blue : "#bada55" }}}
             [b] or use [] like bg-[#bada55]
+    [4] extend in theme in tailwind.config.js: 
+        - colors extend (Lesson05):  
+        Like papayawhip:{light:”” , DEFAULT:””, dark:””}
+        So you have 3 options : papayawhip-light , papayawhip-darker , papayawhip ( this means papayawhip-DEFAULT ) 
+        - keyframes and animation (Lesson04):  add animate-nameOfAnimation class to element
 
 * directives in Tailwind : 
     [1] @apply : 
@@ -87,3 +92,4 @@
     [1] custom animation 
         add keyframes and animation inside theme.extends in tailwind.config.js then add animate-nameOfAnimation class to element ( like in Lesson04)
     [2] default tailwind animation ( like animate-spin)
+
